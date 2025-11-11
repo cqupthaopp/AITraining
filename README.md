@@ -2,9 +2,7 @@
 
 一个基于AI的智能旅行规划应用，帮助用户轻松规划旅行行程、管理预算，并提供个性化的旅行建议。
 
-界面展示如下
-
-![image](https://youke1.picui.cn/s1/2025/11/11/69132af8a81c4.png)
+**界面展示如下，页面的设置中可以直接设置API**![image](https://youke1.picui.cn/s1/2025/11/11/69132af8a81c4.png)
 
 ## 功能特性
 
@@ -102,7 +100,6 @@ npm run dev:backend
 
 ```
 API Key: sk-2a3b4c5d6e7f8g9h0i1j2k3l4m5n6o7p8
-API Secret: a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q
 ```
 
 **使用方法**：
