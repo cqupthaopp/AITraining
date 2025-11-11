@@ -1,0 +1,22 @@
+{
+  "name": "ai-travel-planner",
+  "version": "1.0.0",
+  "description": "AI Travel Planner - 智能旅行规划助手",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node start-local.js",
+    "start:direct": "node server/index.js",
+    "dev:frontend": "cd client && npm run dev",
+    "dev:backend": "cd server && npm run dev",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "install:server": "cd server && npm install",
+    "build": "cd client && npm run build",
+    "docker:start": "docker-compose up -d",
+    "docker:stop": "docker-compose down"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": ["travel", "ai", "planner", "react", "nodejs"],
+  "author": "AI Assistant",
+  "license": "MIT"
+}
