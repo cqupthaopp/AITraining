@@ -1,5 +1,5 @@
 # 多阶段构建 - 第一阶段：构建前端
-FROM node:16-alpine AS frontend-builder
+FROM node:18-alpine AS frontend-builder
 
 # 设置工作目录
 WORKDIR /app
@@ -8,8 +8,14 @@ WORKDIR /app
 COPY client/package*.json ./
 COPY client/ ./
 
-# 安装依赖并构建前端
-RUN npm install --legacy-peer-deps && npm run build
+# 安装依赖
+RUN npm install --legacy-peer-deps
+
+# 安装TypeScript全局（确保tsc可用）
+RUN npm install -g typescript
+
+# 构建前端
+RUN npm run build
 
 # 第二阶段：构建后端并提供服务
 FROM node:16-alpine

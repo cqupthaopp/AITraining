@@ -238,7 +238,7 @@ const HomePage: React.FC = () => {
                             {plan.name}
                           </Typography>
                           <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                            <Map size={16} color="primary" sx={{ mr: 1 }} />
+                            <Map fontSize="small" color="primary" sx={{ mr: 1 }} />
                             <Typography variant="body2" color="primary">
                               {plan.destination}
                             </Typography>
@@ -246,18 +246,18 @@ const HomePage: React.FC = () => {
                           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mb: 2 }}>
                             <Chip 
                               size="small" 
-                              icon={<CalendarToday size={14} />} 
+                              icon={<CalendarToday fontSize="small" />} 
                               label={`${formatDate(plan.startDate)} - ${formatDate(plan.endDate)}`}
                               sx={{ bgcolor: 'primary.light', color: 'primary.contrastText' }}
                             />
                             <Chip 
                               size="small" 
-                              icon={<People size={14} />} 
+                              icon={<People fontSize="small" />} 
                               label={`${plan.people} 人`}
                             />
                             <Chip 
                               size="small" 
-                              icon={<Wallet size={14} />} 
+                              icon={<Wallet fontSize="small" />} 
                               label={`预算 ¥${plan.budget.toLocaleString()}`}
                             />
                           </Box>
@@ -271,19 +271,20 @@ const HomePage: React.FC = () => {
                             color="primary"
                             size="small"
                             onClick={() => navigate(`/plan/${plan._id}`)}
-                            endIcon={<ChevronRight size={16} />}
+                            endIcon={<ChevronRight fontSize="small" />}
                             sx={{ textTransform: 'none', borderRadius: 1 }}
                           >
                             查看
                           </Button>
-                          <IconButton 
-                            size="small" 
-                            color="error" 
-                            onClick={() => handleDeletePlan(plan._id)}
-                            tooltip="删除"
-                          >
-                            <Delete size={18} />
-                          </IconButton>
+                          <Tooltip title="删除">
+                            <IconButton
+                              size="small" 
+                              color="error" 
+                              onClick={() => handleDeletePlan(plan._id)}
+                            >
+                              <Delete fontSize="small" />
+                            </IconButton>
+                          </Tooltip>
                         </Box>
                       </Box>
                       <Divider />
@@ -301,7 +302,7 @@ const HomePage: React.FC = () => {
                           color="primary"
                           size="small"
                           onClick={() => navigate(`/budget/${plan._id}`)}
-                          startIcon={<Wallet size={16} />}
+                          startIcon={<Wallet fontSize="small" />}
                         >
                           管理预算
                         </Button>

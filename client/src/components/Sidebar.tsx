@@ -180,11 +180,11 @@ const Sidebar: React.FC = () => {
       <Box sx={{ mt: 'auto', p: 3, borderTop: '1px solid #f0f0f0' }}>
         <List>
           <ListItem button key="help">
-            <ListItemIcon><Help size={18} /></ListItemIcon>
+            <ListItemIcon><Help fontSize="small" /></ListItemIcon>
             <ListItemText primary="帮助中心" />
           </ListItem>
           <ListItem button key="about">
-            <ListItemIcon><Info size={18} /></ListItemIcon>
+            <ListItemIcon><Info fontSize="small" /></ListItemIcon>
             <ListItemText primary="关于我们" />
           </ListItem>
         </List>

@@ -217,19 +217,19 @@ const BudgetPage: React.FC = () => {
           </Typography>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
             <Chip 
-              icon={<Wallet size={16} />} 
+              icon={<Wallet fontSize="small" />} 
               label={`总预算 ¥${currentPlan.budget.toLocaleString()}`}
               color="primary"
               sx={{ fontWeight: 500 }}
             />
             <Chip 
-              icon={<Wallet size={16} />} 
+              icon={<Wallet fontSize="small" />} 
               label={`已花费 ¥${totalSpent.toLocaleString()}`}
               color={totalSpent > currentPlan.budget ? 'error' : 'success'}
               sx={{ fontWeight: 500 }}
             />
             <Chip 
-              icon={<Wallet size={16} />} 
+              icon={<Wallet fontSize="small" />} 
               label={`剩余 ¥${remainingBudget.toLocaleString()}`}
               color={remainingBudget < 0 ? 'error' : 'info'}
               sx={{ fontWeight: 500 }}
@@ -265,7 +265,7 @@ const BudgetPage: React.FC = () => {
                       outerRadius={100}
                       fill="#8884d8"
                       dataKey="value"
-                      label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                      label={({ name, percent }) => `${name} ${percent ? (percent * 100).toFixed(0) : 0}%`}
                     >
                       {budgetSummary.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -355,14 +355,14 @@ const BudgetPage: React.FC = () => {
                             <TableCell align="right">
                               <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
                                 <IconButton size="small" onClick={() => handleOpenDialog(item)}>
-                                  <Edit size={16} />
+                                  <Edit fontSize="small" />
                                 </IconButton>
                                 <IconButton 
                                   size="small" 
                                   color="error" 
                                   onClick={() => handleDeleteItem(item.id)}
                                 >
-                                  <Delete size={16} />
+                                  <Delete fontSize="small" />
                                 </IconButton>
                               </Box>
                             </TableCell>

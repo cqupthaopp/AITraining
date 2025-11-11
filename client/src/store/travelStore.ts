@@ -53,7 +53,7 @@ interface TravelState {
   isLoading: boolean
   error: string | null
   createPlan: (planData: Partial<TravelPlan>) => Promise<void>
-  generatePlanWithAI: (prompt: string) => Promise<void>
+  generatePlanWithAI: (planData: {destination: string; duration: number; budget: number; people: number; preferences: string; startDate: string; endDate: string}) => Promise<void>
   loadTravelPlans: () => Promise<void>
   getPlanById: (id: string) => Promise<void>
   updatePlan: (id: string, planData: Partial<TravelPlan>) => Promise<void>

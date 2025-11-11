@@ -118,11 +118,11 @@ const Header: React.FC = () => {
                     <Typography>{user?.name}</Typography>
                   </MenuItem>
                   <MenuItem onClick={handleSettings}>
-                    <Settings size={18} sx={{ mr: 2 }} />
+                    <Settings fontSize="small" sx={{ mr: 2 }} />
                     <Typography>设置</Typography>
                   </MenuItem>
                   <MenuItem onClick={handleLogout}>
-                    <Logout size={18} sx={{ mr: 2, color: 'error.main' }} />
+                    <Logout fontSize="small" sx={{ mr: 2, color: 'error.main' }} />
                     <Typography color="error">退出登录</Typography>
                   </MenuItem>
                 </Menu>

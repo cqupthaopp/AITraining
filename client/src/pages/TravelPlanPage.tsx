@@ -128,21 +128,21 @@ const TravelPlanPage: React.FC = () => {
           </Typography>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
             <Chip 
-              icon={<Map size={16} />} 
+              icon={<Map fontSize="small" />} 
               label={currentPlan.destination} 
               color="primary" 
               sx={{ fontWeight: 500 }}
             />
             <Chip 
-              icon={<CalendarToday size={16} />} 
+              icon={<CalendarToday fontSize="small" />} 
               label={`${formatDate(currentPlan.startDate)} - ${formatDate(currentPlan.endDate)}`}
             />
             <Chip 
-              icon={<People size={16} />} 
+              icon={<People fontSize="small" />} 
               label={`${currentPlan.people} 人`}
             />
             <Chip 
-              icon={<Wallet size={16} />} 
+              icon={<Wallet fontSize="small" />} 
               label={`预算 ¥${currentPlan.budget.toLocaleString()}`}
             />
           </Box>
@@ -166,8 +166,8 @@ const TravelPlanPage: React.FC = () => {
           indicatorColor="primary"
           textColor="primary"
         >
-          <Tab label="行程概览" icon={<CalendarToday size={16} />} iconPosition="start" />
-          <Tab label="地图视图" icon={<MapIcon size={16} />} iconPosition="start" />
+          <Tab label="行程概览" icon={<CalendarToday fontSize="small" />} iconPosition="start" />
+          <Tab label="地图视图" icon={<MapIcon fontSize="small" />} iconPosition="start" />
         </Tabs>
       </Paper>
 
@@ -224,7 +224,7 @@ const TravelPlanPage: React.FC = () => {
                         )}
                       </Box>
                       <IconButton size="small">
-                        <Edit size={18} />
+                        <Edit fontSize="small" />
                       </IconButton>
                     </Box>
                     {actIndex < day.activities.length - 1 && (
