@@ -2,6 +2,10 @@
 
 一个基于AI的智能旅行规划应用，帮助用户轻松规划旅行行程、管理预算，并提供个性化的旅行建议。
 
+界面展示如下
+
+![image](https://youke1.picui.cn/s1/2025/11/11/69132af8a81c4.png)
+
 ## 功能特性
 
 ### 核心功能
@@ -48,81 +52,9 @@
    - 确保您的系统已安装Docker和Docker Compose
    - 验证安装：`docker --version` 和 `docker-compose --version`
 
-2. **拉取Docker镜像**
+2. **Docker镜像**
 ```bash
-docker pull registry.cn-hangzhou.aliyuncs.com/ai-travel-planner/app:latest
-```
-
-3. **使用Docker Compose运行**
-
-   创建一个包含以下内容的 `docker-compose.yml` 文件：
-
-```yaml
-version: '3.8'
-
-services:
-  mongodb:
-    image: mongo:latest
-    container_name: mongodb
-    restart: unless-stopped
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
-    healthcheck:
-      test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-
-  app:
-    image: registry.cn-hangzhou.aliyuncs.com/ai-travel-planner/app:latest
-    container_name: ai-travel-planner
-    restart: unless-stopped
-    ports:
-      - "5000:5000"
-    depends_on:
-      - mongodb
-    environment:
-      - PORT=5000
-      - NODE_ENV=production
-      - MONGODB_URI=mongodb://mongodb:27017/ai-travel-planner
-      - JWT_SECRET=ai-travel-planner-jwt-secret-key
-    volumes:
-      - ./logs:/app/logs
-
-volumes:
-  mongo-data:
-```
-
-4. **启动应用**
-```bash
-docker-compose up -d
-```
-
-5. **访问应用**
-   - 打开浏览器访问 `http://localhost:5000`
-   - 系统将自动创建数据库（如果不存在）
-
-### 直接运行Docker镜像
-
-如果您不想使用Docker Compose，也可以直接运行Docker镜像：
-
-1. **先启动MongoDB容器**
-```bash
-docker run -d --name mongodb -p 27017:27017 mongo:latest
-```
-
-2. **运行应用容器**
-```bash
-docker run -d --name ai-travel-planner \
-  -p 5000:5000 \
-  --link mongodb:mongodb \
-  -e PORT=5000 \
-  -e NODE_ENV=production \
-  -e MONGODB_URI=mongodb://mongodb:27017/ai-travel-planner \
-  -e JWT_SECRET=ai-travel-planner-jwt-secret-key \
-  registry.cn-hangzhou.aliyuncs.com/ai-travel-planner/app:latest
+github文件中的tar文件
 ```
 
 ## 本地开发环境设置
